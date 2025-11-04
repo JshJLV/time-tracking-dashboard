@@ -25,7 +25,9 @@ const createCard = (activities, defaultTimeframe) => {
       }">
         <img
           src="src/images/icon-${
-            activity.title == "Self Care" ? "self-care" : activity.title
+            activity.title == "Self Care"
+              ? "self-care"
+              : activity.title.toLowerCase()
           }.svg"
           class="activity-card__icon"
           alt="${activity.title} icon"
