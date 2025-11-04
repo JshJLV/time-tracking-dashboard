@@ -14,28 +14,30 @@ const getUserActivity = async () => {
 const createCard = (activities, defaultTimeframe) => {
   if (!dashboard) return;
 
+  let activityTitle;
   activities.forEach((activity) => {
+    activityTitle = activity.title;
     const article = document.createElement("article");
     article.className = "activity-card";
     article.innerHTML = `
       <div class="activity-card__background activity-card__background--${
         activity.title == "Self Care"
           ? "self-care"
-          : activity.title.toLowerCase()
+          : activityTitle.toLowerCase()
       }">
         <img
           src="src/images/icon-${
             activity.title == "Self Care"
               ? "self-care"
-              : activity.title.toLowerCase()
+              : activityTitle.toLowerCase()
           }.svg"
           class="activity-card__icon"
-          alt="${activity.title} icon"
+          alt="${activityTitle} icon"
         />
       </div>
       <div class="activity-card__content">
         <div class="activity-card__header">
-          <p class="activity-card__name-activity">${activity.title}</p>
+          <p class="activity-card__name-activity">${activityTitle}</p>
           <button class="activity-card__button">
             <img src="src/images/icon-ellipsis.svg" alt="icon ellipsis" />
           </button>
