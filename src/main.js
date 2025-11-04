@@ -24,7 +24,7 @@ const createCard = (activities, defaultTimeframe) => {
           : activity.title.toLowerCase()
       }">
         <img
-          src="/src/images/icon-${
+          src="src/images/icon-${
             activity.title == "Self Care" ? "self-care" : activity.title
           }.svg"
           class="activity-card__icon"
@@ -35,7 +35,7 @@ const createCard = (activities, defaultTimeframe) => {
         <div class="activity-card__header">
           <p class="activity-card__name-activity">${activity.title}</p>
           <button class="activity-card__button">
-            <img src="/src/images/icon-ellipsis.svg" alt="icon ellipsis" />
+            <img src="src/images/icon-ellipsis.svg" alt="icon ellipsis" />
           </button>
         </div>
         <div class="activity-card__timeframes">
